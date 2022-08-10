@@ -32,9 +32,29 @@ class AddBusinessCardActivity : AppCompatActivity() {
                 email = binding.tilEmail.text.toString(),
                 fundoPersonalizado = binding.tilCor.text.toString()
             )
-            mainViewModel.insert(businessCard)
-            Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_SHORT).show()
-            finish()
+
+            if(businessCard.nome == "") {
+                Toast.makeText(this, "Informe o nome.", Toast.LENGTH_SHORT).show()
+            } else  if(businessCard.telefone == "") {
+                Toast.makeText(this, "Informe o telefone.", Toast.LENGTH_SHORT).show()
+            } else  if(businessCard.email == "") {
+                Toast.makeText(this, "Informe o e-mail.", Toast.LENGTH_SHORT).show()
+            } else  if(businessCard.empresa == "") {
+                Toast.makeText(this, "Informe a empresa.", Toast.LENGTH_SHORT).show()
+            } else  if(businessCard.fundoPersonalizado == "") {
+                Toast.makeText(this, "Informe a cor do cartão.", Toast.LENGTH_SHORT).show()
+            } else if(!businessCard.fundoPersonalizado.toString().contains("#")) {
+                Toast.makeText(this, "Informe uma cor hexadecimal válida.", Toast.LENGTH_SHORT).show()
+            } else if(businessCard.fundoPersonalizado.toString().length < 7 || businessCard.fundoPersonalizado.toString().length > 7) {
+                Toast.makeText(this, "Informe uma cor hexadecimal válida.", Toast.LENGTH_SHORT).show()
+            } else if(businessCard.telefone.toString().length < 15) {
+                Toast.makeText(this, "Informe um número de telefone válido.", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                mainViewModel.insert(businessCard)
+                Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_SHORT).show()
+                finish()
+            }
         }
 
         binding.btnClose.setOnClickListener {
