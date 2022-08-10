@@ -26,11 +26,11 @@ class AddBusinessCardActivity : AppCompatActivity() {
     private fun insertListeners() {
         binding.btnConfirm.setOnClickListener {
             val businessCard = BusinessCard(
-                nome = binding.tilNome.editText?.text.toString(),
-                empresa = binding.tilEmpresa.editText?.text.toString(),
-                telefone = binding.tilTelefone.editText?.text.toString(),
-                email = binding.tilEmail.editText?.text.toString(),
-                fundoPersonalizado = binding.tilCor.editText?.text.toString()
+                nome = binding.tilNome.text.toString(),
+                empresa = binding.tilEmpresa.text.toString(),
+                telefone = binding.tilTelefone.text.toString(),
+                email = binding.tilEmail.text.toString(),
+                fundoPersonalizado = binding.tilCor.text.toString()
             )
             mainViewModel.insert(businessCard)
             Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_SHORT).show()
