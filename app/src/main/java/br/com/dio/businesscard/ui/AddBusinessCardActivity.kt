@@ -8,6 +8,7 @@ import br.com.dio.businesscard.App
 import br.com.dio.businesscard.R
 import br.com.dio.businesscard.data.BusinessCard
 import br.com.dio.businesscard.databinding.ActivityAddBusinessCardBinding
+import br.com.jansenfelipe.androidmask.MaskEditTextChangedListener
 
 class AddBusinessCardActivity : AppCompatActivity() {
 
@@ -21,6 +22,7 @@ class AddBusinessCardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         insertListeners()
+        initComponents()
     }
 
     private fun insertListeners() {
@@ -60,5 +62,10 @@ class AddBusinessCardActivity : AppCompatActivity() {
         binding.btnClose.setOnClickListener {
             finish()
         }
+    }
+
+    private fun initComponents() {
+        val maskTEL = MaskEditTextChangedListener("(##) #####-####", binding.tilTelefone)
+        binding.tilTelefone.addTextChangedListener(maskTEL)
     }
 }
