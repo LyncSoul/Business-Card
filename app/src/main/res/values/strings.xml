@@ -10,11 +10,11 @@
     <string name="label_confirmar">Confirmar</string>
     <string name="label_show_success">Cartão registrado com sucesso.</string>
     <string name="label_share_to">Compartilhar</string>
-    <string name="toast_fata_nome">Informe o nome.</string>
-    <string name="label_falta_telefone">Informe o telefone.</string>
-    <string name="label_falta_email">Informe o e-mail.</string>
-    <string name="label_falta_empresa">Informe a empresa.</string>
-    <string name="label_falta_corCartao">Informe a cor do cartão.</string>
-    <string name="label_corHexadecimalInvalida">Informe uma cor hexadecimal válida.</string>
-    <string name="label_telefoneInvalido">Informe um número de telefone válido.</string>
+    <string name="toast_falta_nome">Informe o nome.</string>
+    <string name="toast_falta_telefone">Informe o telefone.</string>
+    <string name="toast_falta_email">Informe o e-mail.</string>
+    <string name="toast_falta_empresa">Informe a empresa.</string>
+    <string name="toast_falta_corCartao">Informe a cor do cartão.</string>
+    <string name="toast_corHexadecimalInvalida">Informe uma cor hexadecimal válida.</string>
+    <string name="toast_telefoneInvalido">Informe um número de telefone válido.</string>
 </resources>
