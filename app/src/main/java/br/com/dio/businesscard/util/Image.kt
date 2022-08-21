@@ -77,7 +77,7 @@ class Image {
 
             fos?.use {
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
-                Toast.makeText(context, "Imagem capturada com sucesso", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Imagem capturada com sucesso.", Toast.LENGTH_SHORT).show()
             }
         }
 

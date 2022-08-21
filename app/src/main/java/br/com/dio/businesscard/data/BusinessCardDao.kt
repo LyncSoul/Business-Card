@@ -15,4 +15,7 @@ interface BusinessCardDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(businessCard: BusinessCard)
 
+    @Query("SELECT COUNT(nome) FROM BusinessCard")
+    fun getCountBusinessCard(): LiveData<Integer>
+
 }

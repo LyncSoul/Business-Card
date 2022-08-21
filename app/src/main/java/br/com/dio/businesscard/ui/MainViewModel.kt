@@ -16,6 +16,10 @@ class MainViewModel(private val businessCardRepository: BusinessCardRepository):
         return businessCardRepository.getAll()
     }
 
+    fun getCountBusinessCard(): LiveData<Integer> {
+        return businessCardRepository.getCountBusinessCard()
+    }
+
 }
 
 class MainViewModelFactory(private val repository: BusinessCardRepository) : ViewModelProvider.Factory {

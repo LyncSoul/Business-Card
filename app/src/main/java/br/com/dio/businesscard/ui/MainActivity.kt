@@ -3,9 +3,11 @@ package br.com.dio.businesscard.ui
 import android.Manifest
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.Observer
 import br.com.dio.businesscard.App
 import br.com.dio.businesscard.databinding.ActivityMainBinding
 import br.com.dio.businesscard.util.Image
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvCards.adapter = adapter
         getAllBusinessCard()
         insertListeners()
+        getCountBusinessCard()
     }
 
     private fun setUpPermissions() {
@@ -54,6 +57,17 @@ class MainActivity : AppCompatActivity() {
     private fun getAllBusinessCard() {
         mainViewModel.getAll().observe(this, { businessCards ->
             adapter.submitList(businessCards)
+        })
+    }
+
+    private fun getCountBusinessCard() {
+        mainViewModel.getCountBusinessCard().observe(this, Observer<Integer>() {
+
+            if(it.toInt() == 0) {
+                binding.noCards.visibility = View.VISIBLE
+            } else {
+                binding.noCards.visibility = View.INVISIBLE
+            }
         })
     }
 
